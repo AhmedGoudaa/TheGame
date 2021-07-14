@@ -1,0 +1,9 @@
+com.xgame.handler.LogMessageConsolePrinter
+com.xgame.handler.ChoseCharacterHandler
+com.xgame.handler.CreateNewCharacterHandler
+com.xgame.handler.FightHandler
+com.xgame.handler.ListAllCharacterHandler
+com.xgame.handler.OnShutdownHandler
+com.xgame.handler.UpdatePlayerPowerHandler
+
+
