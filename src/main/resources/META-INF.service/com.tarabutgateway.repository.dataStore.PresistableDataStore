@@ -1,0 +1,2 @@
+com.tarabutgateway.repository.dataStore.impl.InFileCharacterDataStore
+com.tarabutgateway.repository.dataStore.impl.InFilePlayerDataStore

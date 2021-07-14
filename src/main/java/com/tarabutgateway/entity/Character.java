@@ -5,6 +5,8 @@ import java.util.Objects;
 
 public class Character implements BaseEntity<String> {
 
+  public static final Character DEFAULT_CHARACTER = new Character("UMan", 100);
+
   private final String characterName;
   private       int    power;
 
@@ -17,7 +19,6 @@ public class Character implements BaseEntity<String> {
     this(characterName);
     this.power = power;
   }
-
 
   @Override
   public String getId() {
@@ -55,5 +56,10 @@ public class Character implements BaseEntity<String> {
   @Override
   public int hashCode() {
     return Objects.hash(characterName, power);
+  }
+
+  @Override
+  public String toString() {
+    return "Character['characterName='" + characterName + ", 'power'=" + power + ']';
   }
 }

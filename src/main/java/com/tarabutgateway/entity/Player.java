@@ -2,13 +2,14 @@ package com.tarabutgateway.entity;
 
 import java.util.Objects;
 
-public class Player implements BaseEntity<String>{
+public class Player implements BaseEntity<String> {
 
-  private final String name;
-  private  int currentScore;
-  private  Character currentCharacter;
+  private final String    name;
+  private       int       currentScore;
+  private       Character currentCharacter;
+  private       Level     currentLevel;
 
-  public Player( String name) {
+  public Player(String name) {
     this.name = name;
   }
 
@@ -49,16 +50,25 @@ public class Player implements BaseEntity<String>{
     this.currentCharacter = currentCharacter;
   }
 
+
+  public Level getCurrentLevel() {
+    return currentLevel;
+  }
+
+  public void setCurrentLevel(Level currentLevel) {
+    this.currentLevel = currentLevel;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     Player player = (Player) o;
-    return currentScore == player.currentScore && Objects.equals(name, player.name) && Objects.equals(currentCharacter, player.currentCharacter);
+    return Objects.equals(getId(), player.getId());
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, currentScore, currentCharacter);
+    return Objects.hash(getId());
   }
 }

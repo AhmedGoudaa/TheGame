@@ -11,7 +11,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public class InMemoryCharacterDataStore implements DataStore<Character> {
 
-  private final Map<String, Character> characterMap = new ConcurrentHashMap<>();
+  protected final Map<String, Character> characterMap = new ConcurrentHashMap<>();
 
   @Override
   public void save(Character character) {
@@ -30,9 +30,6 @@ public class InMemoryCharacterDataStore implements DataStore<Character> {
     characterMap.remove(character.getId());
   }
 
-  @Override
-  public void load() {
-  }
 
   @Override
   public Character get() {

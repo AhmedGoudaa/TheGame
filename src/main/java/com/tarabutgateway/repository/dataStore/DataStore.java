@@ -10,7 +10,6 @@ public interface DataStore<E extends BaseEntity> {
 
   void delete(E e);
 
-  void load();
 
   E get();
 

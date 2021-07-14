@@ -14,14 +14,17 @@ public class CreateNewCharacterHandler implements Subscriber<CreateNewCharacter>
   private final CharacterRepository characterRepository;
   private final MessageBus          messageBus;
 
+  public CreateNewCharacterHandler(CharacterRepository characterRepository, MessageBus messageBus) {
+    this.characterRepository = characterRepository;
+    this.messageBus          = messageBus;
+  }
+
   public CreateNewCharacterHandler() {
-    this.characterRepository = CharacterRepoFactory.getInstance();
-    this.messageBus          = MessageBusFactory.getDefaultInstance();
+    this(CharacterRepoFactory.getInstance(), MessageBusFactory.getDefaultInstance());
   }
 
   @Override
   public void handle(CreateNewCharacter characterMessage) {
-
 
     var data = characterMessage.getData();
 
@@ -32,7 +35,7 @@ public class CreateNewCharacterHandler implements Subscriber<CreateNewCharacter>
                     .findFirst();
 
     if (optionalCharacter.isPresent()) {
-      messageBus.send(new LogMessage("Character Already Exists"));
+      messageBus.send(new LogMessage(LogMessage.Log.ERROR,"Character Already Exists"));
 
     } else {
       characterRepository.save(new Character(data.getCharacterName(), data.getPower()));

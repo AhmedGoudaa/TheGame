@@ -8,16 +8,11 @@ import java.util.Set;
 
 public class InMemoryPlayerDataStore implements DataStore<Player> {
 
-  private  Player currentPlayer;
+  private   Player currentPlayer;
 
   @Override
   public void save(Player player) {
     this.currentPlayer = player;
-  }
-
-  @Override
-  public void load() {
-//    currentPlayer = new Player();
   }
 
   @Override
@@ -33,5 +28,13 @@ public class InMemoryPlayerDataStore implements DataStore<Player> {
   @Override
   public void delete(Player player) {
     // do Nothing
+  }
+
+  public Player getCurrentPlayer() {
+    return currentPlayer;
+  }
+
+  public void setCurrentPlayer(Player currentPlayer) {
+    this.currentPlayer = currentPlayer;
   }
 }

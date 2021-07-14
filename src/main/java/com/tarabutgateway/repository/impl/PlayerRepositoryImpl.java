@@ -10,7 +10,6 @@ public class PlayerRepositoryImpl implements PlayerRepository {
 
   public PlayerRepositoryImpl(DataStore<Player> playerDataStore) {
     this.playerDataStore = playerDataStore;
-    this.playerDataStore.load();
   }
 
   @Override

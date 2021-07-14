@@ -1,6 +1,8 @@
 package com.tarabutgateway.entity;
 
 
- public interface BaseEntity<Id> {
+import java.io.Serializable;
+
+public interface BaseEntity<Id> extends Serializable {
    Id getId();
 }

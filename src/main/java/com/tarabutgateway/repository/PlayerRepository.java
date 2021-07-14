@@ -2,7 +2,7 @@ package com.tarabutgateway.repository;
 
 import com.tarabutgateway.entity.Player;
 
-public interface PlayerRepository {
+public interface PlayerRepository extends Repository {
 
   Player loadPlayerData();
 

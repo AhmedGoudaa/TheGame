@@ -7,7 +7,8 @@ public class LogMessageConsolePrinter implements Subscriber<LogMessage> {
 
   @Override
   public void handle(LogMessage logMessageMessage) {
-    System.out.println(logMessageMessage);
+
+    System.out.println(logMessageMessage.getLogType().getColor() + logMessageMessage.getData());
   }
 
   @Override

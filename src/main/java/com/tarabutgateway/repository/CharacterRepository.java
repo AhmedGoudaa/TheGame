@@ -5,7 +5,7 @@ import com.tarabutgateway.entity.Character;
 import java.util.Optional;
 import java.util.Set;
 
-public interface CharacterRepository {
+public interface CharacterRepository extends Repository {
 
   Optional<Character> get(String id) ;
 
