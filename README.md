@@ -1,10 +1,9 @@
 # Welcome to The Game
 
 ### What you can do?
-    * As a player I want to create a character
-    * As a player I want to explore
-    * As a player I want to gain experience through fighting
-    * As a player I want to save and resume a game
+    * can create a character
+    * can gain points through fighting
+    * 💁 u can save and resume a game later
 
 ### Requires
     * JDK15
